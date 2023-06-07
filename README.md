@@ -22,3 +22,12 @@ This API is designed to simulate a Netflix-like application, providing various e
 - `GET /tv/genre/:id`: Retrieve TV series belonging to a specific genre.
 - `GET /tv/similar/:id`: Retrieve a list of TV series similar to a given TV series.
 - `GET /tv/search`: Search for TV series based on a keyword.
+
+# Getting Started
+
+1. Clone the repository: `git clone https://github.com/Nievas1000/API-NETFLIXAPP-EXPRESS`
+2. Move to folder `cd back-end`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm run dev`
+
+To use this API you will need a "themoviedb" api key and you can get it here [THEMOVIEDB](https://developers.themoviedb.org/3/getting-started/introduction) and after that create a .env file with that key
