@@ -99,3 +99,14 @@ exports.getMoviesByKeyword = async (keyword) => {
     throw new Error(error);
   }
 };
+
+exports.getRecomended = async () => {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.API_KEY}`
+    );
+    return response.data[0];
+  } catch (error) {
+    throw new Error(error);
+  }
+};

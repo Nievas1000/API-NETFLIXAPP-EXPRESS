@@ -87,3 +87,12 @@ exports.getMoviesByKeyword = async (req, res) => {
     res.status(500).json({ message: new Error(error) });
   }
 };
+
+exports.getRecomended = async (req, res) => {
+  try {
+    const response = await moviesServices.getRecomended();
+    res.json(response);
+  } catch (error) {
+    res.status(500).json({ message: new Error(error) });
+  }
+};
