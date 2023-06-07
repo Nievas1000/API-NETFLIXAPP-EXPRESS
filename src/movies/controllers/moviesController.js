@@ -88,9 +88,9 @@ exports.getMoviesByKeyword = async (req, res) => {
   }
 };
 
-exports.getRecomended = async (req, res) => {
+exports.getTrending = async (req, res) => {
   try {
-    const response = await moviesServices.getRecomended();
+    const response = await moviesServices.getTrending();
     res.json(response);
   } catch (error) {
     res.status(500).json({ message: new Error(error) });

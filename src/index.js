@@ -1,6 +1,15 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 app.use(express.json());
+
+app.use(
+  cors({
+    origin: ["http://localhost:5173"],
+    methods: ["GET", "POST", "PUT"],
+    credentials: true,
+  })
+);
 
 const moviesRouter = require("./routes/moviesRoute.js");
 const seriesRouter = require("./routes/seriesRoute.js");

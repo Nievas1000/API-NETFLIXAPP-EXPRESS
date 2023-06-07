@@ -100,12 +100,12 @@ exports.getMoviesByKeyword = async (keyword) => {
   }
 };
 
-exports.getRecomended = async () => {
+exports.getTrending = async () => {
   try {
     const response = await axios.get(
       `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.API_KEY}`
     );
-    return response.data[0];
+    return response.data;
   } catch (error) {
     throw new Error(error);
   }
