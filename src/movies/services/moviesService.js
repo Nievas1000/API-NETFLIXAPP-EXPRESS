@@ -110,3 +110,14 @@ exports.getTrending = async () => {
     throw new Error(error);
   }
 };
+
+exports.getActorsByMovie = async (id) => {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.API_KEY}`
+    );
+    return response.data.cast.slice(0, 3);
+  } catch (error) {
+    throw new Error(error);
+  }
+};

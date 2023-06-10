@@ -78,3 +78,13 @@ exports.getSeriesByKeyword = async (req, res) => {
     res.status(500).json({ message: new Error(error) });
   }
 };
+
+exports.getActorsBySerie = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const response = await seriesService.getActorsBySerie(id);
+    res.json(response);
+  } catch (error) {
+    res.status(500).json({ message: new Error(error) });
+  }
+};
