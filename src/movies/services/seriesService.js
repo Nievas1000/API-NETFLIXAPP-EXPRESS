@@ -99,3 +99,14 @@ exports.getActorsBySerie = async (id) => {
     throw new Error(error);
   }
 };
+
+exports.getEpisodiesBySeason = async (serieId, seasonNumber) => {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/tv/${serieId}/season/${seasonNumber}?api_key=${process.env.API_KEY}`
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};

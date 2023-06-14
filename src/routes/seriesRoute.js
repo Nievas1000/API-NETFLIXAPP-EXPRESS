@@ -11,5 +11,8 @@ router.route("/tv/similar/:id").get(seriesController.getSimilarSeries);
 router.route("/tv/search").get(seriesController.getSeriesByKeyword);
 router.route("/tv/actors/:id").get(seriesController.getActorsBySerie);
 router.route("/tv/:id").get(seriesController.getSerieById);
+router
+  .route("/tv/:serieId/season/:seasonNumber")
+  .get(seriesController.getEpisodiesBySeason);
 
 module.exports = router;

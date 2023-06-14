@@ -88,3 +88,16 @@ exports.getActorsBySerie = async (req, res) => {
     res.status(500).json({ message: new Error(error) });
   }
 };
+exports.getEpisodiesBySeason = async (req, res) => {
+  const serieId = req.params.serieId;
+  const seasonNumber = req.params.seasonNumber;
+  try {
+    const response = await seriesService.getEpisodiesBySeason(
+      serieId,
+      seasonNumber
+    );
+    res.json(response);
+  } catch (error) {
+    res.status(500).json({ message: error });
+  }
+};
