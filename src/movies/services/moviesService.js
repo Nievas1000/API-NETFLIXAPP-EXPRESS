@@ -89,10 +89,10 @@ exports.getSimilarMovies = async (id) => {
   }
 };
 
-exports.getMoviesByKeyword = async (keyword) => {
+exports.getMoviesByKeyword = async (keyword, page) => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&query=${keyword}`
+      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&query=${keyword}&page=${page}`
     );
     return response.data;
   } catch (error) {

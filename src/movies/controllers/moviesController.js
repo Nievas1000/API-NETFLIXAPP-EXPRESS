@@ -79,9 +79,10 @@ exports.getSimilarMovies = async (req, res) => {
 };
 
 exports.getMoviesByKeyword = async (req, res) => {
-  const keyword = req.body.keyword;
+  const keyword = req.query.keyword;
+  const page = req.query.page;
   try {
-    const response = await moviesServices.getMoviesByKeyword(keyword);
+    const response = await moviesServices.getMoviesByKeyword(keyword, page);
     res.json(response);
   } catch (error) {
     res.status(500).json({ message: new Error(error) });
